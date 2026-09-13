@@ -1,1 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap');
 @import "tailwindcss";
+
+@theme {
+    --font-sans: "Cascadia Code", sans-serif;
+
+    --color-page-bg: #0B0F14;
+    --color-page-text: #E8E3D8;
+    --color-muted: #B7B3A9;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--color-page-bg);
+    color: var(--color-page-text);
+}
