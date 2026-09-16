@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom'
 import Home from "./pages/Home"
 import Projects from "./pages/Projects"
 import Arcade from "./pages/Arcade"
+import Resume from "./pages/Resume"
 
 function App() {
   return (
@@ -29,10 +30,22 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/arcade" element={<Arcade />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </main>
 
       <footer className="flex">
+        <a
+        href="https://github.com/Jeffmac95"
+        target="_blank"
+        className="text-xs text-muted hover:text-page-text pb-2"
+        >
+          <img 
+          src="/public/lockup-github-16.svg"
+          alt="GitHub logo"
+          className="invert"
+          />
+        </a>
         <span className="text-muted text-xs ml-auto">v0.1</span>
       </footer>
     </div>
