@@ -41,7 +41,7 @@ function App() {
         className="text-xs text-muted hover:text-page-text pb-2"
         >
           <img 
-          src="/public/lockup-github-16.svg"
+          src="/lockup-github-16.svg"
           alt="GitHub logo"
           className="invert"
           />

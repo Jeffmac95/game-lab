@@ -1,8 +1,8 @@
 function Arcade() {
     return (
-        <main>
+        <div>
             <h1>Arcade</h1>
-        </main>
+        </div>
     )
 }
 
