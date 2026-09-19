@@ -7,7 +7,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 const spritesheet = new Image();
-spritesheet.src = "/assets/spritesheet.png";
+spritesheet.src = "./assets/spritesheet.png";
 
 class Game {
     constructor(canvas) {
@@ -31,11 +31,13 @@ class Game {
         this.rockspawnInterval = 800;
         this.maxRocks = 12;
 
-        this.music = new Audio("/assets/DST-TowerDefenseTheme.mp3");
-        this.lazerSound = new Audio("/assets/laser1.wav");
-        this.explosionSound = new Audio("/assets/explosion.wav");
+        this.music = new Audio("./assets/DST-TowerDefenseTheme.mp3");
+        this.lazerSound = new Audio("./assets/laser1.wav");
+        this.explosionSound = new Audio("./assets/explosion.wav");
         this.lazerSound.volume = 0.2;
         this.explosionSound.volume = 0.2;
+
+        this.music.play();
 
         this.handleInput();
     }
@@ -85,6 +87,9 @@ class Game {
 
     update(deltaTime) {
         if (this.gameOver) return;
+
+        if (this.player.x <= 0) this.player.x = 0;
+        if (this.player.x > canvas.width - this.player.width) this.player.x = canvas.width - this.player.width;
 
         this.player.update(deltaTime);
         this.bullets.forEach(b => b.update(deltaTime));
@@ -150,8 +155,6 @@ class Game {
     handleInput() {
         addEventListener("keydown", (e) => {
             if (this.gameOver) return;
-
-            this.music.play();
 
             if (e.key === "a" || e.key === "A") {
                 this.player.movingLeft = true;
