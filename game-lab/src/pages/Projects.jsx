@@ -31,7 +31,7 @@ function Projects() {
 
             <div className="flex flex-col justify-center items-center mt-8 p-4 border-t-2 border-b-2">
                 <h2 className="text-xl">Milky Way Defender</h2>
-                <img src="/milkywaydefender/shooting.png"
+                <img src="/milkywaydefender/example_imgs/shooting.png"
                 alt="Rocket shooting"
                 className="max-w-120 max-h-120"
                 />
@@ -41,11 +41,11 @@ function Projects() {
                     <span className="text-muted">Tech: Java 21, LibGDX 1.12.1, LWJGL3, and Gradle</span>
                 </p>
                 <div className="flex">
-                    <img src="/milkywaydefender/animations.png"
+                    <img src="/milkywaydefender/example_imgs/animations.png"
                     alt="Moving rocket"
                     className="max-w-200 max-h-175 px-3"
                     />
-                    <img src="/milkywaydefender/particles.png"
+                    <img src="/milkywaydefender/example_imgs/particles.png"
                     alt="Particle from bullet-rock collision"
                     className="max-w-200 max-h-175"
                     />
