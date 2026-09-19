@@ -22,14 +22,14 @@ function Arcade() {
             <aside className="mt-12 ml-2">
                 Games:
                 <ul>
-                    <li onClick={() => setShowDescription(!showDescription)}
+                    <li onClick={() => setShowDescription(prev => !prev)}
                     className="hover:cursor-pointer"
                     >
                         &gt; Milky Way Defender
                         <button
-                            onClick={() => setDrawCanvas(!drawCanvas)}
+                            onClick={() => setDrawCanvas(prev => !prev)}
                             className="ml-2 border rounded-md px-2 py-1 hover:bg-white hover:text-black">
-                            Play
+                            {drawCanvas ? "Cancel" : "Play"}
                         </button>
                     </li>
                 </ul>
@@ -48,7 +48,6 @@ function Arcade() {
                             <span>Shoot = Spacebar</span>
                         </p>
                     </div>
-
                 )}
             </aside>
         </div>
