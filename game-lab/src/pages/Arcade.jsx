@@ -26,7 +26,7 @@ function Arcade() {
                     {showDescription && (
                         <div className="mt-2 max-w-md">
                             <p className="text-muted">
-                                A 2D arcade-style space shooter where you defend against incoming asteroids.
+                                A 2D space shooter where you defend against incoming asteroids.
                             </p>
                         </div>
                     )}
