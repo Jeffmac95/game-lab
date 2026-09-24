@@ -56,8 +56,9 @@ class Game {
         );
 
         if (this.showCooldown) {
+            ctx.font = "18px Arial";
             ctx.fillStyle = "#E07A7A";
-            ctx.strokeText("Gun on cooldown!", 230, 600);
+            ctx.fillText("Gun on cooldown!", 230, 600);
         }
 
         if (this.state === "playing") {
@@ -163,7 +164,7 @@ class Game {
                     this.showCooldown = false;
                 } else {
                     this.showCooldown = true;
-                    this.coolDownTimer = 1.5;
+                    this.coolDownTimer = 0.3;
                 }
             }
 
