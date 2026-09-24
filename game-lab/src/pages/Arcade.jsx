@@ -12,10 +12,14 @@ function Arcade() {
                 <aside className="w-full md:w-1/3 ml-2">
                     <h3 className="text-accent text-xl">Games:</h3>
                     <ul className="w-fit">
+
                         <li onClick={() => setSelectedDescription(selectedDescription === "milky-way-def" ? null : "milky-way-def")}
                         className="hover:cursor-pointer"
                         >
-                            &gt; Milky Way Defender
+                            <span className="mr-1">
+                                {selectedDescription === "milky-way-def" ? "v" : ">"}
+                            </span>
+                            Milky Way Defender
                             <button
                                 onClick={(e) => {
                                     e.stopPropagation();
@@ -24,19 +28,21 @@ function Arcade() {
                                 className="ml-2 border rounded-md px-2 py-1 hover:bg-accent hover:text-black">
                                 Play
                             </button>
+                            {selectedDescription === "milky-way-def" && (
+                                <p className="text-muted">
+                                    A 2D space shooter
+                                </p>
+                            )}
                         </li>
 
-                        {selectedDescription === "milky-way-def" && (
-                        <div className="mt-2 max-w-md">
-                            <p className="text-muted">
-                                A 2D space shooter where you defend against incoming asteroids.
-                            </p>
-                        </div>
-                        )}
+
 
                         <li onClick={() => setSelectedDescription(selectedDescription === "snake" ? null : "snake")} 
                         className="hover:cursor-pointer">
-                            &gt; Snake
+                            <span className="mr-1">
+                                {selectedDescription === "snake" ? "v" : ">"}
+                            </span>
+                            Snake
                             <button
                                 onClick={(e) => {
                                     e.stopPropagation();
@@ -45,15 +51,12 @@ function Arcade() {
                                 className="ml-2 border rounded-md px-2 py-1 hover:bg-accent hover:text-black">
                                 Play
                             </button>
-                        </li>
-
-                        {selectedDescription === "snake" && (
-                            <div className="mt-2 max-w-md">
+                            {selectedDescription === "snake" && (
                                 <p className="text-muted">
-                                    Classic Snake.
+                                    Classic Snake
                                 </p>
-                            </div>
-                        )}
+                            )}
+                        </li>
                     </ul>
                 </aside>
 
@@ -86,7 +89,8 @@ function Arcade() {
                             className="border-0"
                         />
                         <p className="mt-2 md:mt-0 md:ml-4 text-sm text-muted">
-                            Controls: W A S D
+                            <span className="text-accent">Controls: </span>
+                            W A S D
                         </p>
                     </div> 
                 )}
