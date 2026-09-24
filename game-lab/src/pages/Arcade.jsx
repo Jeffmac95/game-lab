@@ -1,8 +1,8 @@
 import { useState } from "react"
 
 function Arcade() {
-    const [showDescription, setShowDescription] = useState(false);
-    const [drawCanvas, setDrawCanvas] = useState(false);
+    const [selectedDescription, setSelectedDescription] = useState(null);
+    const [selectedGame, setSelectedGame] = useState(null);
 
     return (
         <div className="w-full mx-auto px-6">
@@ -12,26 +12,52 @@ function Arcade() {
                 <aside className="w-full md:w-1/3 ml-2">
                     <h3 className="text-accent text-xl">Games:</h3>
                     <ul className="w-fit">
-                        <li onClick={() => setShowDescription(prev => !prev)}
+                        <li onClick={() => setSelectedDescription(selectedDescription === "milky-way-def" ? null : "milky-way-def")}
                         className="hover:cursor-pointer"
                         >
                             &gt; Milky Way Defender
                             <button
-                                onClick={() => setDrawCanvas(prev => !prev)}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setSelectedGame("milky-way-def");
+                                }}
                                 className="ml-2 border rounded-md px-2 py-1 hover:bg-accent hover:text-black">
-                                {drawCanvas ? "Cancel" : "Play"}
+                                Play
                             </button>
                         </li>
-                    </ul>
-                    {showDescription && (
+
+                        {selectedDescription === "milky-way-def" && (
                         <div className="mt-2 max-w-md">
                             <p className="text-muted">
                                 A 2D space shooter where you defend against incoming asteroids.
                             </p>
                         </div>
-                    )}
+                        )}
+
+                        <li onClick={() => setSelectedDescription(selectedDescription === "snake" ? null : "snake")} 
+                        className="hover:cursor-pointer">
+                            &gt; Snake
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setSelectedGame("snake");
+                                }}
+                                className="ml-2 border rounded-md px-2 py-1 hover:bg-accent hover:text-black">
+                                Play
+                            </button>
+                        </li>
+
+                        {selectedDescription === "snake" && (
+                            <div className="mt-2 max-w-md">
+                                <p className="text-muted">
+                                    Classic Snake.
+                                </p>
+                            </div>
+                        )}
+                    </ul>
                 </aside>
-                {drawCanvas && (
+
+                {selectedGame === "milky-way-def" && (
                     <div className="w-full md:w-2/3 flex flex-col md:flex-row">
                         <iframe
                             src="/milkywaydefender/game/index.html"
@@ -49,6 +75,20 @@ function Arcade() {
                             Shoot: Spacebar
                         </p>
                     </div>
+                )}
+
+                {selectedGame === "snake" && (
+                    <div className="w-full md:w-2/3 flex flex-col md:flex-row">
+                        <iframe 
+                            src="/snake/index.html"
+                            width="600"
+                            height="600"
+                            className="border-0"
+                        />
+                        <p className="mt-2 md:mt-0 md:ml-4 text-sm text-muted">
+                            Controls: W A S D
+                        </p>
+                    </div> 
                 )}
             </div>
         </div>
