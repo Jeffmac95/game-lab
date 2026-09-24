@@ -5,7 +5,6 @@ export default class Rock {
         this.y = 0;
         this.rocks = [
             {name: "largeRock", x: 832, y: 0, width: 64, height: 64, maxHp: 2},
-            //{name: "largeRockDamaged", x: 800, y: 64, width: 64, height: 64},
             {name: "mediumRock", x: 864, y: 64, width: 40, height: 40, maxHp: 1},
             {name: "smallRock", x: 864, y: 104, width: 32, height: 32, maxHp: 1}
         ];
@@ -39,7 +38,7 @@ export default class Rock {
     }
 
     update(deltaTime) {
-        this.y += this.speed * (deltaTime / 1000);
+        this.y += this.speed * deltaTime;
     }
 
     chooseRandomRock() {
