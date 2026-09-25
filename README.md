@@ -12,10 +12,8 @@ The site showcases my web development projects, programming projects, and a smal
 * Project showcase with screenshots and descriptions
 * Interactive arcade page
 * Browser-playable games
-* Embedded HTML5 Canvas games
 * Resume page
-* GitHub and project links
-* Dark, terminal-inspired interface
+* GitHub link
 
 ## Projects
 
@@ -33,7 +31,7 @@ A 2D arcade-style space shooter where the player defends against incoming astero
 
 **Tech:** JavaScript, HTML5 Canvas
 
-The game includes multiple game states, score tracking, shooting, collision detection, increasing difficulty, sound effects, music, and particle effects.
+The game includes multiple game states, score tracking, shooting, collision detection, sound effects, music, and particle effects.
 
 ### Pixcraft
 
@@ -90,7 +88,6 @@ The games use vanilla JavaScript and HTML5 Canvas and do not depend on React.
 
 * JavaScript
 * HTML5 Canvas
-* Web Audio
 
 ### Deployment
 
